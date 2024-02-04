@@ -45,7 +45,7 @@ public class Controller {
 		CosmosQueryRequestOptions options = new CosmosQueryRequestOptions();
 		return container.queryItems("SELECT TOP 20 * FROM City c", options, City.class).byPage()
 				.map(FeedResponse::getResults);
-	}
+	} 
 
 	@PostMapping("/cities")
 	public String createCities(@RequestBody City city) {		
